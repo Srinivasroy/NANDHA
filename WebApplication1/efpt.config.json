@@ -1,0 +1,40 @@
+﻿{
+  "CodeGenerationMode": 2,
+  "ContextClassName": "WebApplication1Context",
+  "ContextNamespace": "Data",
+  "DefaultDacpacSchema": null,
+  "FilterSchemas": false,
+  "IncludeConnectionString": false,
+  "ModelNamespace": "Models",
+  "OutputContextPath": "Data",
+  "OutputPath": "Models",
+  "ProjectRootNamespace": "WebApplication1",
+  "Schemas": null,
+  "SelectedHandlebarsLanguage": 0,
+  "SelectedToBeGenerated": 0,
+  "Tables": [
+
+    {
+      "Name": "[dbo].[Employee]",
+      "ObjectType": 0
+    }
+  ],
+  "UiHint": "SRINIVAS_ROY\\SQLEXPRESS.TRIMMS",
+  "UseBoolPropertiesWithoutDefaultSql": false,
+  "UseDatabaseNames": false,
+  "UseDbContextSplitting": false,
+  "UseFluentApiOnly": true,
+  "UseHandleBars": false,
+  "UseHierarchyId": false,
+  "UseInflector": true,
+  "UseLegacyPluralizer": false,
+  "UseManyToManyEntity": false,
+  "UseNoConstructor": false,
+  "UseNoDefaultConstructor": false,
+  "UseNoNavigations": false,
+  "UseNoObjectFilter": false,
+  "UseNodaTime": false,
+  "UseNullableReferences": false,
+  "UseSchemaFolders": false,
+  "UseSpatial": false
+}
