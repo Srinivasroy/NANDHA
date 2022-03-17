@@ -18,6 +18,7 @@ namespace WebApplication1.Models
         public string? Rm_Emp_ID { get; set; }
         public string? Band { get; set; }
         public string? Level { get; set; }
+        public string? Role_ID { get; set; }
 
 
 
