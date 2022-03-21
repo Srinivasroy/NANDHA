@@ -7,6 +7,5 @@ namespace WebApplication1.Models
 {
     public partial class POSTResult
     {
-        public int COMMITTRANSACTION { get; set; }
     }
 }

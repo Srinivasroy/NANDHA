@@ -40,7 +40,7 @@ namespace WebApplication1.Data
 
     public interface IWebApplication1ContextProceduresContract
     {
-        Task<List<POSTResult>> POSTAsync(string Emp_ID, string Emp_Name, string Designation, string Location, string DOJ, string LWD, string Vertical_L2, string Email_ID, string RM_Emp_ID, string Band, string Level, string Role_ID, CancellationToken cancellationToken = default);
+        Task<List<POSTResult>> POSTAsync(string Emp_ID, string Emp_Name, string Designation, string Location, DateTime? DOJ, DateTime? LWD, string Vertical_L2, string Email_ID, string RM_Emp_ID, string Band, string Level, string Role_ID, CancellationToken cancellationToken = default);
     }
 
     public partial class WebApplication1ContextProcedures
@@ -52,7 +52,7 @@ namespace WebApplication1.Data
             _context = context;
         }
 
-        public virtual async Task<List<POSTResult>> POSTAsync(string Emp_ID, string Emp_Name, string Designation, string Location, DateTime DOJ, DateTime LWD, string Vertical_L2, string Email_ID, string RM_Emp_ID, string Band, string Level, string Role_ID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default)
+        public virtual async Task<List<POSTResult>> POSTAsync(string Emp_ID, string Emp_Name, string Designation, string Location, DateTime? DOJ, DateTime? LWD, string Vertical_L2, string Email_ID, string RM_Emp_ID, string Band, string Level, string Role_ID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default)
         {
             var parameterreturnValue = new SqlParameter
             {
@@ -73,14 +73,14 @@ namespace WebApplication1.Data
                 new SqlParameter
                 {
                     ParameterName = "Emp_Name",
-                    Size = 50,
+                    Size = -1,
                     Value = Emp_Name ?? Convert.DBNull,
                     SqlDbType = System.Data.SqlDbType.VarChar,
                 },
                 new SqlParameter
                 {
                     ParameterName = "Designation",
-                    Size = 100,
+                    Size = -1,
                     Value = Designation ?? Convert.DBNull,
                     SqlDbType = System.Data.SqlDbType.VarChar,
                 },
@@ -94,16 +94,14 @@ namespace WebApplication1.Data
                 new SqlParameter
                 {
                     ParameterName = "DOJ",
-                    
-                    Value = DOJ,
-                    SqlDbType = System.Data.SqlDbType.DateTime,
+                    Value = DOJ ?? Convert.DBNull,
+                    SqlDbType = System.Data.SqlDbType.Date,
                 },
                 new SqlParameter
                 {
                     ParameterName = "LWD",
-                    
-                    Value = LWD,
-                    SqlDbType = System.Data.SqlDbType.DateTime,
+                    Value = LWD ?? Convert.DBNull,
+                    SqlDbType = System.Data.SqlDbType.Date,
                 },
                 new SqlParameter
                 {
@@ -129,14 +127,14 @@ namespace WebApplication1.Data
                 new SqlParameter
                 {
                     ParameterName = "Band",
-                    Size = 50,
+                    Size = -1,
                     Value = Band ?? Convert.DBNull,
                     SqlDbType = System.Data.SqlDbType.VarChar,
                 },
                 new SqlParameter
                 {
                     ParameterName = "Level",
-                    Size = 50,
+                    Size = -1,
                     Value = Level ?? Convert.DBNull,
                     SqlDbType = System.Data.SqlDbType.VarChar,
                 },
