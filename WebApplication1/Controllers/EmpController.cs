@@ -16,20 +16,21 @@ namespace WebApplication1.Controllers
 
         // GET: api/<EmpController>
         [HttpGet]
-        public List<Employee>Get()
+        public List<Employee> Get()
         {
             Employee em = new Employee();
-            em.type = "get";
-            DataSet dS = dbop.EmployeeGet(em, out msg);
+            //em.type = "get";
+            DataSet dS = dbop.EmployeeGetAllEmp();
             List<Employee> list = new List<Employee>();
 
-            foreach (DataRow dr in dS.Tables[6].Rows)
+
+            foreach (DataRow dr in dS.Tables[0].Rows)
             {
                 list.Add(new Employee
                 {
                     Emp_ID = ((string)dr["Emp_ID"]),
                     Emp_Name = dr["Emp_Name"].ToString(),
-                    Designation = dr[" Designation"].ToString(),
+                    Designation = dr["Designation"].ToString(),
                     Location = dr["Location"].ToString(),
                     Doj = (DateTime)dr["Doj"],
                     Lwd = (DateTime)dr["Lwd"],
@@ -41,10 +42,14 @@ namespace WebApplication1.Controllers
                     Role_ID = dr["Role_ID"].ToString(),
 
                 });
-            } 
+            }
             return list;
 
         }
+
+
+
+
 
         // GET api/<EmpController>/5
         [HttpGet("{id}")]
@@ -63,7 +68,7 @@ namespace WebApplication1.Controllers
                 {
                     Emp_ID = ((string)dr["Emp_ID"]),
                     Emp_Name = dr["Emp_Name"].ToString(),
-                    Designation = dr[" Designation"].ToString(),
+                    Designation = dr["Designation"].ToString(),
                     Location = dr["Location"].ToString(),
                     Doj = (DateTime)dr["Doj"],
                     Lwd = (DateTime)dr["Lwd"],
@@ -112,12 +117,25 @@ namespace WebApplication1.Controllers
                 msg = ex.Message;
             }
             return msg;
-        } 
+        }
 
-                // DELETE api/<EmpController>/5
-                [HttpDelete("{id}")]
-                public void Delete(int id)
-                {
-                }
+        // DELETE api/<EmpController>/5
+        [HttpDelete("{id}")]
+        public string Delete(string id, [FromBody] Employee em)
+        {
+            string msg = string.Empty;
+            em.type = "delete";
+            try
+            {
+                em.Emp_ID = id;
+                msg = dbop.EmployeeOpt(em);
             }
+            catch (Exception ex)
+            {
+                msg = ex.Message;
+            }
+            return msg;
+
+        }
+    }
 }
