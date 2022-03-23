@@ -28,16 +28,29 @@ namespace WebApplication1.Controllers
         }
 
 
-    // GET: api/OutputEmp
-    [HttpGet("{id}")]
-        public async Task<ActionResult<IEnumerable<Employee>>> GetEmployee(string id)
-        {
-            string StoredProc = "exec GetdetByID " +
-            "@e_ID = '" + id + "'";
-            
-            return await _context.Employee.FromSqlRaw(StoredProc).ToListAsync();
 
-        }
+
+
+
+
+
+
+
+
+
+
+
+    // GET: api/OutputEmp
+    //[HttpGet("{id}")]
+    //    public async Task<ActionResult<IEnumerable<Employee>>> GetEmployee(string id)
+    //    {
+    //        string StoredProc = "exec GetdetByID " +
+    //        "@e_ID = '" + id + "'";
+            
+    //        return await _context.Employee.FromSqlRaw(StoredProc).ToListAsync();
+
+    //    }
+
 
 
         [HttpPost]

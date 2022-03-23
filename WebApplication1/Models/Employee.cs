@@ -59,6 +59,8 @@ namespace WebApplication1.Models
         [Required]
         public string? Role_ID { get; set; }
 
+        public string? type { get; set; }
+
 
     }
 }
