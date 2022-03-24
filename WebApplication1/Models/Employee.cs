@@ -9,58 +9,61 @@ namespace WebApplication1.Models
         [Key]
         [Required]
         [Display(Name = "Employee ID")]
-        public string? Emp_ID { get; set; }
+        public string Emp_ID { get; set; } = "";
 
 
-        [Required(ErrorMessage = "Name Required")]
-        [Display(Name = "Employee Name")]
-        public string? Emp_Name { get; set; }
+        //[Required(ErrorMessage = "Name Required")]
+        //[Display(Name = "Employee Name")]
+        public string Emp_Name { get; set; } = "";
 
 
-        [Required]
-        public string? Designation { get; set; }
-        [Required(ErrorMessage = "Location Required")]
-        public string? Location { get; set; }
+        //[Required]
+        public string Designation { get; set; } = "";
+        // [Required(ErrorMessage = "Location Required")]
+        public string Location { get; set; } = "";
 
 
-        [Required]
-        [Display(Name = "Date of Joining")]
-        public DateTime Doj { get; set; }
-
+        //[Required]
+        //[Display(Name = "Date of Joining")]
+        //private DateTime Doj = DateTime.Now;
+       // public DateTime Doj { get {return Doj; } set { Doj = value; } }
+        public DateTime Doj { get; set; } = DateTime.Now;
 
         
-        [Display(Name = "Last Working Day")]
-        public DateTime Lwd { get; set; }
+        //[Display(Name = "Last Working Day")]
+        //public DateTime Lwd { get { return Lwd; } set { Lwd = value; } }
+        public DateTime Lwd { get; set; } = DateTime.Now;
+
+        //[Required]
+        // [Display(Name = "Vertical L2")]
+        public string Vertical_L2 { get; set; } = "";
 
 
-        [Required]
-        [Display(Name = "Vertical L2")]
-        public string? Vertical_L2 { get; set; }
+
+        //[Required(ErrorMessage = "Email Required")]
+        //[Display(Name = "Email ID")]
+        public string Email_ID { get; set; } = "";
 
 
-
-        [Required(ErrorMessage = "Email Required")]
-        [Display(Name = "Email ID")]
-        public string? Email_ID { get; set; }
+        //[Required]
+        public string Rm_Emp_ID { get; set; } = "";
 
 
-        [Required]
-        public string? Rm_Emp_ID { get; set; }
+        //[Required]
+        public string Band { get; set; }  = "";
 
 
-        [Required]
-        public string? Band { get; set; }
+        //[Required]
+        public string Level { get; set; } = "";
 
 
-        [Required]
-        public string? Level { get; set; }
+       // [Required]
+        public string Role_ID { get; set; }  = "";
 
+        public string type { get; set; } = "";
 
-        [Required]
-        public string? Role_ID { get; set; }
-
-        public string? type { get; set; }
-
+       
+        
 
     }
 }

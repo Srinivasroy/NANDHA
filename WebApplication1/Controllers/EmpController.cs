@@ -19,8 +19,8 @@ namespace WebApplication1.Controllers
         public List<Employee> Get()
         {
             Employee em = new Employee();
-            //em.type = "get";
-            DataSet dS = dbop.EmployeeGetAllEmp();
+            em.type = "get";
+            DataSet dS = dbop.EmployeeGet(em);
             List<Employee> list = new List<Employee>();
 
 
@@ -59,7 +59,7 @@ namespace WebApplication1.Controllers
             Employee em = new Employee();
             em.Emp_ID = id;
             em.type = "getid";
-            DataSet dS = dbop.EmployeeGet(em, out msg);
+            DataSet dS = dbop.EmployeeGet(em);
             List<Employee> list = new List<Employee>();
 
             foreach (DataRow dr in dS.Tables[0].Rows)
